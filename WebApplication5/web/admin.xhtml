@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Log in page</title>
+        <style>
+            #wlc {
+
+               
+                text-align: center;
+                font-size: 50px;
+                color: white;
+               
+            }
+            body{
+                 background-image: url('image1/llg.jpg');
+            }
+           
+            .img2{
+                display: flex;
+                justify-content: center;
+                margin: 60px;
+            }
+            .log{
+                display: flex;
+                justify-content: center;
+                margin: 10px;
+
+            }
+            .form-group{
+                display: flex;
+                justify-content: center;
+                margin: 10px;
+            }
+            .body{
+                background-color: green;
+            }
+            #pass{
+                margin: 20px;
+            }
+            
+        
+
+   .bbb6{
+                background-color: black;
+                position: relative;
+                top: 20px;
+                
+                left: 130px;
+                font-size: 2rem;
+                 color: white;
+                 border-radius: 100px;
+            }
+              .bbb7{
+                background-color: black;
+                position: relative;
+                top: 20px;
+                left: 180px;
+                font-size: 2rem;
+                 color: white;
+                 border-radius: 100px;
+            }
+
+
+        </style>
+    </h:head>
+    <h:body style="background-image: url('llg.jpg');">
+        <h:form>
+            <h1 id="wlc">welcome</h1>
+            <fieldset class ="fset" style="width: 400px; margin:auto; height: 500px; padding: 20px; margin-top: 50px; background-color: white; border-radius: 50px;">
+                <div class = "img2">
+                    <img src="image1/admin.png" alt="log in" style="width:400px;height:200px;"></img>
+                </div>
+
+                <div class="log">
+                    <h:outputLabel id="un" value="User Name :  "/>
+                    <h:inputText id="uNameInputText" value="#{login.usern}" />
+                </div>
+                <div class="form-group">
+                    <h:outputLabel value="Password : "/>
+
+                    <h:inputSecret id="pass" class="form-control" value="#{login.pass}" />
+
+                </div>
+                <div class="bt2">
+                   
+              <h:commandButton class="bbb6" action="#{login.method1()}" value="Log in" />
+             <h:commandButton class="bbb7" value="cancel" />	
+
+                </div>
+
+            </fieldset>
+        </h:form>
+    </h:body>
+</html>
