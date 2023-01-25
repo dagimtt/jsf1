@@ -16,7 +16,7 @@ import javax.faces.context.FacesContext;
 public class Login implements Serializable {
   private String usern;
     private String pass;
-    private String msg;
+   
   
   
     public String getUsern() {
@@ -26,15 +26,7 @@ public class Login implements Serializable {
     public void setUsern(String usern) {
         this.usern = usern;
     }
-   
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+  
      public String getPass() {
         return pass;
     }
@@ -47,13 +39,13 @@ public class Login implements Serializable {
         boolean num = Dagim(usern, pass);
         if (num) {
               DBConnection dbcon = new DBConnection();
-            Connection con = dbcon.connMethod();
-            PreparedStatement ps = con.prepareStatement("select USERTYPE from ADUSER where USERNAME=?");
+              Connection con = dbcon.connMethod();
+            PreparedStatement ps = con.prepareStatement("select TYPE from ADUSER where USERNAME=?");
             ps.setString(1, usern);       
             ResultSet rs = ps.executeQuery();
             rs.next();
             String userType =rs.getString(1);
-            if ("Admin".equals(userType)) {
+            if ("Ad".equals(userType)) {
                 return "homePage";
             } else {
                 return "user";

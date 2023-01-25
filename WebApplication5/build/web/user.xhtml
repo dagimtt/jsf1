@@ -8,8 +8,11 @@
         <style>
             .use{
                 position: relative;
-                left: 400px;
+                left: 200px;
             }
+                        .use:hover {
+  background: linear-gradient(#ccc2a6, #eae0c2);
+}
              .bbb6{
                 background-color: whitesmoke;
                 position: relative;
@@ -19,6 +22,12 @@
                  color: black;
                   border-radius: 100px;
             }
+            .bbb6:hover {
+  background: linear-gradient(#ccc2a6, #eae0c2);
+}
+        .bbb7:hover {
+  background: linear-gradient(#ccc2a6, #eae0c2);
+}
               .bbb7{
                 background-color: whitesmoke;
                 position: relative;
@@ -28,58 +37,71 @@
                  color: black;
                  border-radius: 100px;
             }
+            .col{
+                 position: fixed;
+                 top: 110px;
+                 left: 200px;
+              
+              
+            }
+            
+            
         </style>
     </h:head>
     <h:body>
         <h:form>
-             <h:commandButton class="bbb6" value="Evaluate" />
-             <h:commandButton class="bbb7" value="cancel" />
-            <fieldset  class="use" style="width: 700px; margin:auto; height: 550px; padding: 20px; margin-top: 50px; background-color: whitesmoke;">
+             <h:commandButton class="bbb6" action="#{newJSFManagedBean.rtInsert}" value="Evaluate" />
+             <h:commandButton class="bbb7" type="reset" value="cancel" />
+             <div class="col">                   
+                        <h:selectOneMenu value ="#{newJSFManagedBean.instractor}" class="form-control" >
+                            <f:selectItems value ="#{newJSFManagedBean.instractorList}" />	
+                        </h:selectOneMenu>
+                </div>
+            <fieldset  class="use"  style="width: 700px; margin:auto; height: 550px; padding: 20px; margin-top: 50px; background-color: whitesmoke;">
                 <dir>
-                    <h4>This teacher is well prepared for the subject</h4>
+                    
                    
-                    <h:selectOneRadio value="userData.data">
-                   <f:selectItem itemValue="1" itemLabel="5" />
-                     <f:selectItem itemValue="2" itemLabel="4" />    
-                     <f:selectItem itemValue="3" itemLabel="3" />
-                     <f:selectItem itemValue="4" itemLabel="2" /> 
-                     <f:selectItem itemValue="5" itemLabel="1" />
-                     </h:selectOneRadio>
+                     
+                  <h4>This teacher is well prepared for the subject</h4>
+                     
+                    <div >
+                        <h:selectOneRadio class="btn-group-justified" value="#{newJSFManagedBean.evaluate1}" >
+                            <f:selectItems value="#{newJSFManagedBean.evaluate1list}"/>	
+                        </h:selectOneRadio>
+                    </div>
+                      
+                    
+                   
                     <h4>This teacher communicates the subject matter clearly</h4>
-                    <h:selectOneRadio value="userData.data">
-                   <f:selectItem itemValue="1" itemLabel="5" />
-                     <f:selectItem itemValue="2" itemLabel="4" />    
-                     <f:selectItem itemValue="3" itemLabel="3" />
-                     <f:selectItem itemValue="4" itemLabel="2" /> 
-                     <f:selectItem itemValue="5" itemLabel="1" />
-                     </h:selectOneRadio>
+                   <div >
+                        <h:selectOneRadio class="btn-group-justified" value="#{newJSFManagedBean.evaluate2}" >
+                            <f:selectItems value="#{newJSFManagedBean.evaluate2list}"/>	
+                        </h:selectOneRadio>
+                    </div>
                     <h4>The teacher is helpful in responding to questions or problems</h4>
-                    <h:selectOneRadio value="userData.data">
-                   <f:selectItem itemValue="1" itemLabel="5" />
-                     <f:selectItem itemValue="2" itemLabel="4" />    
-                     <f:selectItem itemValue="3" itemLabel="3" />
-                     <f:selectItem itemValue="4" itemLabel="2" /> 
-                     <f:selectItem itemValue="5" itemLabel="1" />
-                     </h:selectOneRadio>
+                   <div >
+                        <h:selectOneRadio class="btn-group-justified" value="#{newJSFManagedBean.evaluate3}" >
+                            <f:selectItems value="#{newJSFManagedBean.evaluate3list}"/>	
+                        </h:selectOneRadio>
+                    </div>
                     <h4>Feedback on assignments marked by this teacher has been helpful</h4>
-                    <h:selectOneRadio value="userData.data">
-                   <f:selectItem itemValue="1" itemLabel="5" />
-                     <f:selectItem itemValue="2" itemLabel="4" />    
-                     <f:selectItem itemValue="3" itemLabel="3" />
-                     <f:selectItem itemValue="4" itemLabel="2" /> 
-                     <f:selectItem itemValue="5" itemLabel="1" />
-                     </h:selectOneRadio>
+                   <div >
+                        <h:selectOneRadio class="btn-group-justified" value="#{newJSFManagedBean.evaluate4}" >
+                            <f:selectItems value="#{newJSFManagedBean.evaluate4list}"/>	
+                        </h:selectOneRadio>
+                    </div>
                     <h4>This teacher encouraged participation in discussion and collaboration</h4>
-                    <h:selectOneRadio value="userData.data">
-                   <f:selectItem itemValue="1" itemLabel="5" />
-                     <f:selectItem itemValue="2" itemLabel="4" />    
-                     <f:selectItem itemValue="3" itemLabel="3" />
-                     <f:selectItem itemValue="4" itemLabel="2" /> 
-                     <f:selectItem itemValue="5" itemLabel="1" />
-                     </h:selectOneRadio>
+                    <div >
+                        <h:selectOneRadio class="btn-group-justified" value="#{newJSFManagedBean.evaluate5}" >
+                            <f:selectItems value="#{newJSFManagedBean.evaluate5list}"/>	
+                        </h:selectOneRadio>
+                    </div>
+                    
                   
                 </dir>
+               
             </fieldset>
+              
             
         </h:form>
     </h:body>

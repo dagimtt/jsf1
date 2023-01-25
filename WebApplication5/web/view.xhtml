@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>view</title>
+        <style>
+            .ll{
+                text-align: center;
+            }
+             
+            </style>
+    </h:head>
+    <h:body>
+        <ui:include src="homePage.xhtml" />
+        <h:form>
+           
+       
+            <div class="ll">
+                <h2>RATING</h2>
+            </div>
+            <h:dataTable id="users" columnClasses="list-column-center" value="#{bean1.getlist()}"  var="col1" >                     
+                <h:column>
+                    <f:facet name="header">INSTRACTOR</f:facet>
+                    <h:outputText value="#{col1.iname}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning"> STATMENT 1 </f:facet>
+                    <h:outputText value="#{col1.evaluate1}"/> 
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header"> STATMENT 2</f:facet>
+                   <h:outputText value="#{col1.evaluate2}"/> 
+                </h:column>
+                <h:column>
+                    <f:facet name="header">STATMENT 3</f:facet>
+                   <h:outputText value="#{col1.evaluate3}"/> 
+                </h:column>
+                <h:column>
+                    <f:facet name="header">STATMENT 4</f:facet>
+                   <h:outputText value="#{col1.evaluate4}"/> 
+                </h:column>
+                <h:column>
+                  <f:facet name="header">STATMENT 5</f:facet>
+                   <h:outputText value="#{col1.evaluate5}"/> 
+                </h:column>
+            </h:dataTable>
+    
+        
+</h:form>
+    </h:body>
+</html>

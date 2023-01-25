@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>instructor</title>
         <style>
@@ -44,6 +45,28 @@
                 left: 700px;
                 font-size: 1.2rem;
             }
+                   .myButton {
+                position: fixed;
+                top: 30px;
+                left: 1200px;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
             .ee{
                 position: fixed;
                 top: 270px;
@@ -83,74 +106,39 @@
             .ccl {
   background-image: url('image1//images.webp');
 }
-      #bb2 {
-	background-color: white;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-        margin: 20px;
-	font-family:Arial;
-	font-size:17px;
-	padding:5px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-        position: fixed;
-           color: black;
-        top: 20px;
-        left: 70px;
-}
-body{
-             background-image: url('image1/ex.jpg');
-             
-        }
-     #bb3 {
-	background-color: white;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-        margin: 20px;
-	font-family:Arial;
-	font-size:17px;
-	padding:5px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-        position: fixed;
-        color: black;
-        top: 20px;
-        left: 1200px;
 
-        
+body{
+             background-image: url('image/ex.jpg');
+             margin: 0px;
+        }
         </style>
     </h:head>
     <h:body>
+       
          <h:form>
+              
+                <ui:include src="homePage.xhtml" />
+                <a href="Studview.xhtml" class="myButton">List</a>
         <fieldset class ="ccl" style="width: 800px; margin:auto; height: 700px; padding: 20px; margin-top: 50px; background-color: whitesmoke; " >
             <h2 class="add">Add Instructor</h2>
                 <div class="d1">
                     <h:outputLabel class="smane" value="   Name :  "/>
-                    <h:inputText class="snameInputText" />
+                    <h:inputText class="snameInputText" value ="#{newJSFManagedBean.iname}" />
                    
                     <h:outputLabel class="dd" value="Department :  "/>
-                    <h:inputText class="ddInputText" />
+                    <h:inputText class="ddInputText" value ="#{newJSFManagedBean.idep}" />
                      
                     <h:outputLabel class="ee" value="E-mail :  "/>
-                    <h:inputText class="eeInputText" />
+                    <h:inputText class="eeInputText" value ="#{newJSFManagedBean.email}" />
                    
                     <h:outputLabel class="ss" value="Subject :  "/>
-                    <h:inputText class="ssInputText" />
+                    <h:inputText class="ssInputText" value ="#{newJSFManagedBean.sub}"/>
                     <br></br>
                     <br></br>
                 
-                    <h:commandButton class="bbb" value="ADD" />
+                    <h:commandButton class="bbb" action="#{newJSFManagedBean.toInsert()}" value="ADD" />
                 </div>
-            <div class="ff">
-                 <a href="homePage.xhtml"  id="bb2" role="button">back</a>
-                 <a href="index.xhtml"  id="bb3" role="button">Log Out</a>
-            </div>
+           
         </fieldset>
         </h:form>
     </h:body>

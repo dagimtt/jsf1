@@ -7,10 +7,11 @@
         <style>
             #wlc {
 
-               
+                top: 20px;
                 text-align: center;
-                font-size: 50px;
+                font-size: 30px;
                 color: white;
+                
                
             }
             body{
@@ -33,8 +34,8 @@
                 justify-content: center;
                 margin: 10px;
             }
-            .body{
-                background-color: green;
+            body{
+                background-color: black;
             }
             #pass{
                 margin: 20px;
@@ -63,9 +64,10 @@
             }
 
 
+
         </style>
     </h:head>
-    <h:body style="background-image: url('llg.jpg');">
+    <h:body style="background-image: url('image1/1.jpg');">
         <h:form>
             <h1 id="wlc">welcome</h1>
             <fieldset class ="fset" style="width: 400px; margin:auto; height: 500px; padding: 20px; margin-top: 50px; background-color: white; border-radius: 50px;">
@@ -75,7 +77,7 @@
 
                 <div class="log">
                     <h:outputLabel id="un" value="User Name :  "/>
-                    <h:inputText id="uNameInputText" value="#{login.usern}" />
+                    <h:inputText  value="#{login.usern}" />
                 </div>
                 <div class="form-group">
                     <h:outputLabel value="Password : "/>
@@ -86,7 +88,7 @@
                 <div class="bt2">
                    
               <h:commandButton class="bbb6" action="#{login.method1()}" value="Log in" />
-             <h:commandButton class="bbb7" value="cancel" />	
+             <h:commandButton class="bbb7" type="reset" value="cancel" />	
 
                 </div>
 
